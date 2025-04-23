@@ -2,7 +2,7 @@
 
 ## Abstract
 
-This project focuses on three critical HR analytics tasks: predicting employee performance, classifying performance levels, and identifying high-risk attrition cases. We employ various supervised machine learning models—including Logistic Regression, Random Forest, Decision Trees, SVM using a well-engineered feature set from employee performance and engagement data. The models are evaluated on their accuracy, F1-score, precision and recall, while confusion matrices provide insight into prediction quality.## 
+This project focuses on three critical HR analytics tasks: predicting employee performance, classifying performance levels, and identifying high-risk attrition cases. We employ various supervised machine learning models—including Logistic Regression, Random Forest, Decision Trees, SVM using a well-engineered feature set from employee performance and engagement data. The models are evaluated on their accuracy, F1-score, precision and recall, while confusion matrices provide insight into prediction quality.
 
 ## Dataset
 
@@ -163,10 +163,3 @@ Alert HR if an employee has high attrition probability and low predicted perform
 
 Risk: Needs retraining on recent data periodically to remain effective
 
-## Future Work
-
-Add more features (e.g., manager ratings, attendance data)
-
-Use explainable AI (SHAP/LIME) for transparency
-
-Experiment with ensemble stacking for further gains
