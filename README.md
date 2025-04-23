@@ -121,31 +121,37 @@ Confusion Matrix Highlights:
 
 All models evaluated using heatmap confusion matrices
 
-## Model Accuracy (Classification):
+## Model Evaluation Metrics
 
-Model
+### Performance Prediction
 
-Accuracy
+| Model                   | R² Score | MSE      | MAE      | Accuracy (%) |
+|------------------------|----------|----------|----------|---------------|
+| Random Forest Regressor| 0.389750 | 0.048669 | 0.190594 | 76.54         |
+| Linear Regression      | 0.373556 | 0.049961 | 0.198158 | 75.61         |
+| SVR                    | 0.373350 | 0.049977 | 0.185287 | 77.19         |
 
-Logistic Regression
+### Performance Classification
 
-76.2%
+| Model                | Accuracy | Precision | Recall | F1 Score |
+|---------------------|----------|-----------|--------|----------|
+| Logistic Regression | 69.43%   | 60.62%    | 42.24% | 49.79%   |
+| Random Forest       | 70.44%   | 63.92%    | 40.40% | 49.51%   |
+| Decision Tree       | 70.44%   | 65.24%    | 37.68% | 47.77%   |
+| SVM                 | 68.77%   | 57.42%    | 50.16% | 53.54%   |
 
-Decision Tree
+![image](https://github.com/user-attachments/assets/6e15ad2d-218e-47e0-9ec7-8c812a3c585e)
 
-75.4%
+### Attrition Classification
 
-Random Forest
+| Model                | Accuracy | Precision | Recall | F1 Score |
+|---------------------|----------|-----------|--------|----------|
+| Logistic Regression | 71.99%   | 11.64%    | 82.24% | 20.39%   |
+| Random Forest       | 84.30%   | 17.57%    | 70.39% | 28.12%   |
+| Decision Tree       | 87.51%   | 18.34%    | 53.95% | 27.38%   |
+| SVM                 | 84.59%   | 14.94%    | 53.95% | 23.40%   |
 
-78.1%
-
-SVM
-
-77.0%
-
-Neural Network
-
-75.2%
+![image](https://github.com/user-attachments/assets/f28f719d-40fd-4f46-8f02-a86ee8127b96)
 
 Overfitting & Underfitting
 
