@@ -1,4 +1,4 @@
-### Hire - 0- Dynamics : Employees Performance Prediction and Classification, Attribution Classification
+# Hire - 0- Dynamics : Employees Performance Prediction and Classification, Attribution Classification
 
 ## Dataset Overview
 
@@ -8,7 +8,7 @@ The dataset used for this project is an HR dataset from Kaggle containing employ
 
 avg_training_score, previous_year_rating, no_of_trainings, awards_won, KPIs_met_more_than_80, length_of_service, education, gender, region, age, recruitment_channel and department
 
-# Dataset Usefulness:
+### Dataset Usefulness:
 
 Understand employee performance drivers
 
@@ -16,7 +16,7 @@ Predict potential attrition risks
 
 Make proactive HR policy decisions
 
-## Project Objectives
+### Project Objectives
 
 This project is focused on predicting:
 
@@ -26,7 +26,7 @@ Attrition Risk (classification)
 
 Performance Classification (classification - high vs. low performer)
 
-# Real-world Use
+### Real-world Use
 
 Optimize training programs
 
@@ -34,7 +34,7 @@ Identify employees at attrition risk
 
 Improve internal talent management
 
-# Process Overview & Experience
+### Process Overview & Experience
 
 Explored the dataset with EDA
 
@@ -48,7 +48,7 @@ Built multiple models iteratively
 
 Tuned hyperparameters via GridSearchCV/RandomSearchCV
 
-# Pivot Moments
+### Pivot Moments
 
 Removed performance leakage features from classification
 
@@ -65,17 +65,17 @@ Observations: ~7000
 
 Features: ~13-17
 
-# Feature Distribution
+### Feature Distribution
 
 KPIs_met_more_than_80 is highly imbalanced (80% met KPIs)
 
 awards_won is mostly 0
 
-# Target Distribution
+### Target Distribution
 
 attrition: ~10% attrition cases
 
-# performance_classification: balanced high/low after transformation
+performance_classification: balanced high/low after transformation
 
 ## Correlation
 
@@ -85,13 +85,13 @@ Low correlation among many categorical variables
 
 ## Feature Engineering
 
-# Feature Creation:
+### Feature Creation:
 
 training_efficiency = avg_training_score / (no_of_trainings + 1)
 
 experience_rating_ratio = previous_year_rating / (length_of_service + 1)
 
-# Encoding:
+### Encoding:
 
 One-Hot Encoding for department, region, education
 
@@ -121,23 +121,23 @@ RandomSearchCV for fast exploration in neural networks
 
 ## Validation / Metrics
 
-# Metrics Used:
+### Metrics Used:
 
 Regression: R², MSE, MAE
 
 Classification: Accuracy, Precision, Recall, F1 Score, ROC-AUC Curve
 
-# Confusion Matrix Insight
+### Confusion Matrix Insight
 
 Used heatmaps for clear visual confusion matrix comparisons
 
 Highlighted model precision-recall tradeoffs
 
-# Model Weaknesses
+### Model Weaknesses
 
 SVM lower recall than Random Forest
 
-# Prediction Samples
+### Prediction Samples
 
 Real example: employee with 7 years service, low training score predicted as attrition
 
