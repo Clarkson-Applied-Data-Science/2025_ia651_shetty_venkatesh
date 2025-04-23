@@ -169,3 +169,13 @@ Alert HR if an employee has high attrition probability and low predicted perform
 
 Risk: Needs retraining on recent data periodically to remain effective
 
+## Future Scope
+1. Incorporate More Diverse Data Sources
+2. Real-Time or Streaming Predictions
+3. Advanced Model Interpretability
+4. Integration with HR Tools
+5. Time Series Forecasting
+6. Custom Recommendations
+7. Inclusion of Ethical and Bias Audits
+8. Employee Lifecycle Prediction
+9. Transfer Learning Across Organizations
