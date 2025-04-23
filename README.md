@@ -42,9 +42,12 @@ Y: performance_score (regression), performance_class (classification), attrition
 
 ## Distributions
 
-education, gender and department are skewed
-
-KPIs and awards are heavily imbalanced
+![image](https://github.com/user-attachments/assets/b34a6699-41c1-49d4-a2a2-cdac4ac5b1a9)
+![image](https://github.com/user-attachments/assets/c7f50f4c-dcef-4740-a65c-4b269ea8dd65)
+![image](https://github.com/user-attachments/assets/fd3becec-862d-4d52-a4be-9352c2cbd181)
+![image](https://github.com/user-attachments/assets/575fcd4e-651b-4c5a-b154-129cd4c27182)
+![image](https://github.com/user-attachments/assets/84e32600-e6af-4dbf-a9b8-ac1de47c1929)
+![image](https://github.com/user-attachments/assets/beaaf0d8-af66-4731-97c4-1eb8d1c97a6a)
 
 ## Correlation
 
@@ -61,6 +64,10 @@ KPIs_met_more_than_80, avg_training_score, previous_year_rating are top predicto
 ## Feature Engineering
 
 Created derived features:
+
+attrition = ['KPIs_met_more_than_80'] == 0) & ['avg_training_score'] < 60) & ['length_of_service'] > 5) & ['previous_year_rating'] <= 2) & ['awards_won'] == 0)
+
+
 
 training_efficiency = avg training score / (no of trainings + 1)
 
