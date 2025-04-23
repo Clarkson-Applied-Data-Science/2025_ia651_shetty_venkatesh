@@ -102,7 +102,7 @@ Used GridSearchCV for Logistic, Decision Tree, and Random Forest
 
 Used dropout, batch norm, and Adam optimizer in Neural Network tuning
 
-📏 Metrics
+## Metrics
 
 Regression: R², MSE, MAE
 
@@ -114,7 +114,7 @@ Confusion Matrix Highlights:
 
 All models evaluated using heatmap confusion matrices
 
-Model Accuracy (Classification):
+## Model Accuracy (Classification):
 
 Model
 
@@ -140,7 +140,7 @@ Neural Network
 
 75.2%
 
-⚖ Overfitting & Underfitting
+Overfitting & Underfitting
 
 Decision Trees showed mild overfitting at high depth
 
@@ -148,7 +148,7 @@ Dropout in Neural Networks helped reduce overfitting
 
 Ensemble models like Random Forests performed well overall
 
-🚀 Production & Use
+## Production & Use
 
 Recommend integrating prediction API into HR dashboards
 
@@ -156,7 +156,7 @@ Alert HR if an employee has high attrition probability and low predicted perform
 
 Risk: Needs retraining on recent data periodically to remain effective
 
-📈 Future Work
+## Future Work
 
 Add more features (e.g., manager ratings, attendance data)
 
