@@ -1,168 +1,165 @@
-# Hire - 0- Dynamics : Employees Performance Prediction and Classification, Attrition Classification
+# Hire-o-Dynamics : Performance Prediction, Classification and Attrition Modelling
 
-## Dataset Overview
+## Abstract
 
-The dataset used for this project is an HR dataset from Kaggle containing employee-level information such as department, training scores, previous year ratings, awards won, length of service and more. It is from HR analytics systems and is structured to assist with performance and attrition forecasting.
+This project focuses on three critical HR analytics tasks: predicting employee performance, classifying performance levels, and identifying high-risk attrition cases. We employ various supervised machine learning models—including Logistic Regression, Random Forest, Decision Trees, SVM using a well-engineered feature set from employee performance and engagement data. The models are evaluated on their accuracy, F1-score, precision and recall, while confusion matrices provide insight into prediction quality.## 
 
-## Key Fields:
+## Dataset
 
-avg_training_score, previous_year_rating, no_of_trainings, awards_won, KPIs_met_more_than_80, length_of_service, education, gender, region, age, recruitment_channel and department
+Data Source: [https://www.kaggle.com/datasets/sanjanchaudhari/employees-performance-for-hr-analytics/data)]
 
-### Dataset Usefulness:
+Records: ~17,000 rows (employees)
 
-Understand employee performance drivers
+Features:
 
-Predict potential attrition risks
+Demographics: department, region, education, gender
 
-Make proactive HR policy decisions
+Performance Metrics: no_of_trainings, avg_training_score, previous_year_rating, KPIs_met_more_than_80, awards_won, length_of_service
 
-### Project Objectives
+Derived Metrics: training_efficiency, experience_rating_ratio, awards_per_year, performance_score, attrition
 
-This project is focused on predicting:
+## Prediction Objectives
 
-Performance Score (regression)
+Performance Prediction (Regression): Estimate a numerical score to represent overall employee performance.
 
-Attrition Risk (classification)
+Performance Classification: Predict whether an employee's performance is satisfactory or not.
 
-Performance Classification (classification - high vs. low performer)
+Attrition Classification: Predict the likelihood of an employee leaving based on performance-related criteria.
 
-### Real-world Use
+## Practical Use Case
 
-Optimize training programs
+These models support HR decisions like personalized development, promotions, and retention strategies.
 
-Identify employees at attrition risk
+## Process Overview
 
-Improve internal talent management
+We began with regression models for numeric performance prediction and moved to classification models for performance categories and attrition. Mis-steps included data leakage and overfitting with certain models. Final approaches include preprocessing pipelines, SMOTE balancing and grid search for hyperparameter tuning.
 
-### Process Overview & Experience
+## EDA Summary
 
-Explored the dataset with EDA
+X: Employee attributes, ratings, and derived metrics
 
-Cleaned and imputed missing values
+Y: performance_score (regression), performance_class (classification), attrition (binary classification)
 
-Created a performance score as a derived metric
+## Distributions
 
-Engineered features like training efficiency and awards per year
+education, gender and department are skewed
 
-Built multiple models iteratively
-
-Tuned hyperparameters via GridSearchCV/RandomSearchCV
-
-### Pivot Moments
-
-Removed performance leakage features from classification
-
-Switched from default models to SMOTE + pipelines due to class imbalance
-
-## Exploratory Data Analysis (EDA)
-
-Target Variables: 
-**performance_score** (derived attribute) - Performace Prediction (regression)
-**attrition** (derived attribute) -  Attrition classification (classification)
-**KPIs_met_more_than_80** - Performance classification (classification)
-
-Observations: ~7000
-
-Features: ~13-17
-
-### Feature Distribution
-
-KPIs_met_more_than_80 is highly imbalanced (80% met KPIs)
-
-awards_won is mostly 0
-
-### Target Distribution
-
-attrition: ~10% attrition cases
-
-performance_classification: balanced high/low after transformation
+KPIs and awards are heavily imbalanced
 
 ## Correlation
 
-Strong: previous_year_rating vs. KPIs_met_more_than_80
+previous_year_rating and performance_score are positively correlated
 
-Low correlation among many categorical variables
+avg_training_score correlates with performance as expected
+
+![image](https://github.com/user-attachments/assets/7ba00ebd-7d11-45a4-a402-193520d103fb)
+
+## Feature Importance (Random Forest)
+
+KPIs_met_more_than_80, avg_training_score, previous_year_rating are top predictors
 
 ## Feature Engineering
 
-### Feature Creation:
+Created derived features:
 
-training_efficiency = avg_training_score / (no_of_trainings + 1)
+training_efficiency = avg training score / (no of trainings + 1)
 
 experience_rating_ratio = previous_year_rating / (length_of_service + 1)
 
+awards_per_year = awards / service length
+
 ### Encoding:
 
-One-Hot Encoding for department, region, education
+Used OneHotEncoding for nominal features
 
-Frequency Encoding for region
+Used Frequency Encoding for region
 
-Binary/label encoding avoided to maintain model interpretability
+StandardScaler for numerical features
 
 ## Model Fitting
 
-Train/Test Split: 80/20 stratified
+Train-Test Split: 80:20 using train_test_split with stratification for classification
 
-No data leakage ensured:
+Data Leakage Prevention: Feature engineering and leakage-prone variables (performance_score in classification) were excluded where needed
 
-performance_score not included in classification
+Models Used
 
-## Models Used
+Linear Regression (for performance prediction)
 
-Regression: Linear Regression, Random Forest Regressor, SVR
+Logistic Regression
 
-Classification: Logistic Regression, Random Forest Classifier, Decision Tree, SVM
+Decision Tree Classifier
 
-## Hyperparameter Tuning
+Random Forest Classifier
 
-GridSearchCV for depth, C, estimators, kernels
+Support Vector Machine (SVM)
 
-RandomSearchCV for fast exploration in neural networks
+Neural Network (Keras)
 
-## Validation / Metrics
+Hyperparameter Tuning
 
-### Metrics Used:
+Used GridSearchCV for Logistic, Decision Tree, and Random Forest
+
+Used dropout, batch norm, and Adam optimizer in Neural Network tuning
+
+📏 Metrics
 
 Regression: R², MSE, MAE
 
-Classification: Accuracy, Precision, Recall, F1 Score, ROC-AUC Curve
+Classification: Accuracy, Precision, Recall, F1-Score
 
-### Confusion Matrix Insight
+Used SMOTE for class imbalance
 
-Used heatmaps for clear visual confusion matrix comparisons
+Confusion Matrix Highlights:
 
-Highlighted model precision-recall tradeoffs
+All models evaluated using heatmap confusion matrices
 
-### Model Weaknesses
+Model Accuracy (Classification):
 
-SVM lower recall than Random Forest
+Model
 
-### Prediction Samples
+Accuracy
 
-Real example: employee with 7 years service, low training score predicted as attrition
+Logistic Regression
 
-Synthesized: new employee with high awards + KPI met = low attrition risk
+76.2%
 
-## Overfitting & Underfitting
+Decision Tree
 
-Regularization (L2 for LR)
+75.4%
 
-Pruning for DTs
+Random Forest
 
-## Production Considerations
+78.1%
 
-Deployability: Logistic Regression / Random Forest due to speed & interpretability
+SVM
 
-Monitoring: Retrain monthly to capture organization shifts
+77.0%
 
-Precautions: Model shouldn't be used in isolation without HR input
+Neural Network
 
-## Further Enhancements
+75.2%
 
-Add more employee engagement metrics
+⚖ Overfitting & Underfitting
 
-Include time-series trends
+Decision Trees showed mild overfitting at high depth
 
-Create explainability dashboards (e.g., SHAP values)
+Dropout in Neural Networks helped reduce overfitting
 
-Integrate with HR dashboards or BI tools
+Ensemble models like Random Forests performed well overall
+
+🚀 Production & Use
+
+Recommend integrating prediction API into HR dashboards
+
+Alert HR if an employee has high attrition probability and low predicted performance
+
+Risk: Needs retraining on recent data periodically to remain effective
+
+📈 Future Work
+
+Add more features (e.g., manager ratings, attendance data)
+
+Use explainable AI (SHAP/LIME) for transparency
+
+Experiment with ensemble stacking for further gains
