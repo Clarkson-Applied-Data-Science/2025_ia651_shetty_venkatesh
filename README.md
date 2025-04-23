@@ -1,4 +1,4 @@
-# Hire - 0- Dynamics : Employees Performance Prediction and Classification, Attribution Classification
+# Hire - 0- Dynamics : Employees Performance Prediction and Classification, Attrition Classification
 
 ## Dataset Overview
 
