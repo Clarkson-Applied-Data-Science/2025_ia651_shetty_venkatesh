@@ -1,22 +1,17 @@
-# Hire-o-Dynamics : Performance Prediction, Classification and Attrition Modelling
+# Hire-o-Dynamics : Employee Performance & Attrition Analysis
 
 ## Abstract
 
-This project focuses on three critical HR analytics tasks: predicting employee performance, classifying performance levels and identifying high-risk attrition cases. We employ various supervised machine learning models—including Logistic Regression, Random Forest, Decision Trees, SVM using a well-engineered feature set from employee performance and engagement data. The models are evaluated on their accuracy, F1-score, precision and recall, while confusion matrices provide insight into prediction quality.
+This project tackles three pivotal challenges in HR analytics: forecasting employee performance, classifying performance tiers, and identifying employees at high risk of attrition. Leveraging a robust, engineered feature set derived from employee engagement and performance metrics, we apply a suite of supervised machine learning algorithms—including Logistic Regression, Random Forest, Decision Trees, and Support Vector Machines (SVM). Model performance is rigorously evaluated using accuracy, precision, recall, and F1-score, while confusion matrices offer a deeper view into the quality of predictions.
 
 ## Dataset
 
-- Data Source: [https://www.kaggle.com/datasets/sanjanchaudhari/employees-performance-for-hr-analytics/data)]
-
-- Records: ~17,000 rows (employees)
-
-- **Features:**
-
- - **Demographics:** department, region, education, gender
-
- - **Performance Metrics:** no_of_trainings, avg_training_score, previous_year_rating, KPIs_met_more_than_80, awards_won, length_of_service
-
- - **Derived Metrics:** training_efficiency, experience_rating_ratio, awards_per_year, performance_score, attrition
+- **Source**: [Kaggle - Employee’s Performance for HR Analytics](https://www.kaggle.com/datasets/sanjanchaudhari/employees-performance-for-hr-analytics/data)
+- **Total Records**: ~17,000 rows (employees)
+- **Attributes**: Includes employee details with total 18 variables, 13 existing and 5 derived: 
+   1. **Demographics**: department, region, education, gender
+   2. **Performance Metrics**: no_of_trainings, avg_training_score, previous_year_rating, KPIs_met_more_than_80, awards_won, length_of_service
+   3. **Derived Metrics**: training_efficiency, experience_rating_ratio, awards_per_year, performance_score, attrition
 
 ## Prediction Objectives
 
