@@ -12,11 +12,11 @@ Records: ~17,000 rows (employees)
 
 Features:
 
- **Demographics:** department, region, education, gender
+ -**Demographics:** department, region, education, gender
 
- **Performance Metrics:** no_of_trainings, avg_training_score, previous_year_rating, KPIs_met_more_than_80, awards_won, length_of_service
+ -**Performance Metrics:** no_of_trainings, avg_training_score, previous_year_rating, KPIs_met_more_than_80, awards_won, length_of_service
 
- **Derived Metrics:** training_efficiency, experience_rating_ratio, awards_per_year, performance_score, attrition
+ -**Derived Metrics:** training_efficiency, experience_rating_ratio, awards_per_year, performance_score, attrition
 
 ## Prediction Objectives
 
