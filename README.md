@@ -123,36 +123,35 @@ This project is structured around three core tasks in Human Resource analyticsâ€
    ![image](https://github.com/user-attachments/assets/7ba00ebd-7d11-45a4-a402-193520d103fb)
 
 ## Feature Importance (Random Forest)
-
-KPIs_met_more_than_80, avg_training_score, previous_year_rating are top predictors
+ - KPIs_met_more_than_80, avg_training_score, previous_year_rating are top predictors
 
 ## Feature Engineering
-
-Created derived features:
-
-attrition = (KPIs_met_more_than_80 == 0) & (avg_training_score < 60) & (length_of_service > 5) & (previous_year_rating <= 2) & (awards_won == 0)
-
-performance_score = (avg_training_score / 100 ) + (KPIs_met_more_than_80 * 0.5)
-
-training_efficiency = avg training score / (no of trainings + 1)
-
-experience_rating_ratio = previous_year_rating / (length_of_service + 1)
-
-awards_per_year = awards / service length
+ - attrition = (KPIs_met_more_than_80 == 0) & (avg_training_score < 60) & (length_of_service > 5) & (previous_year_rating <= 
+   2) & (awards_won == 0)
+ - performance_score = (avg_training_score / 100 ) + (KPIs_met_more_than_80 * 0.5)
+ - training_efficiency = avg training score / (no of trainings + 1)
+ - experience_rating_ratio = previous_year_rating / (length_of_service + 1)
+ - awards_per_year = awards / service length
 
 ### Encoding:
-
-Used OneHotEncoding for nominal features, Frequency Encoding for region and StandardScaler for numerical features
+ - Used OneHotEncoding for nominal features, Frequency Encoding for region and StandardScaler for numerical features
 
 ## Model Fitting
-
-**Train-Test Split:** 80:20 using train_test_split with stratification for classification
-
-**Data Leakage Prevention:** Feature engineering and leakage-prone variables (performance_score in classification) were excluded where needed
+ - **Train-Test Split:** 80:20 using train_test_split with stratification for classification
+ - **Data Leakage Prevention:** Feature engineering and leakage-prone variables (performance_score in classification) were excluded where needed
 
 ## Models Used
-
-Linear Regression (for performance prediction), Logistic Regression, Decision Tree Classifier, Random Forest Classifier, Support Vector Machine (SVM), Hyperparameter Tuning, Used GridSearchCV for Logistic, Decision Tree and Random Forest, Used dropout, batch norm and Adam optimizer in Neural Network tuning
+ 1. Linear Regression (for performance prediction)
+ 2. Logistic Regression
+ 3. Decision Tree Classifier
+ 4. Random Forest Classifier
+ 5. Support Vector Machine (SVM)
+ 6. Hyperparameter Tuning
+ 7. Used GridSearchCV for Logistic
+ 8. Decision Tree and Random Forest
+ 9. Used dropout
+ 10. batch norm
+ 11. Adam optimizer in Neural Network tuning
 
 ## Metrics
 
