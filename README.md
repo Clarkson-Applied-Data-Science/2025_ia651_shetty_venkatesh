@@ -56,17 +56,16 @@ This project is structured around three core tasks in Human Resource analytics�
 3. **Modeling Techniques**
      - Different models were applied based on the problem type:
      - **A. Performance Prediction (Regression)**
-            - **Algorithms Used:**
-                - Linear Regression
-                - Random Forest Regressor
-                - Support Vector Regressor (SVR)
-            - **Target:**
-                - A custom performance_score combining training score and KPI metrics.
-            - **Evaluation Metrics:**
-                - R² Score
-                - Mean Squared Error (MSE)
-                - Mean Absolute Error (MAE)
-                - Custom accuracy metric: 1 - mean absolute % error
+       - **Algorithms Used:**
+         1. Linear Regression
+         2. Random Forest Regressor
+         3. Support Vector Regressor (SVR)
+       - **Target:** A custom performance_score combining training score and KPI metrics.
+       - **Evaluation Metrics:**
+         1. R² Score
+         2. Mean Squared Error (MSE)
+         3. Mean Absolute Error (MAE)
+         4. Custom accuracy metric: 1 - mean absolute % error
      - **B. Performance Classification**
             - **Goal:**
                 - Classify whether employees met more than 80% of their KPIs.
