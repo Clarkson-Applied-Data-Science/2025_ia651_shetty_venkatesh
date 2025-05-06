@@ -30,7 +30,7 @@ These models support HR decisions like personalized development, promotions and 
 
 This project is structured around three core tasks in Human Resource analyticsâ€”performance prediction, performance classification, and attrition classification. Each task follows a consistent, methodical approach combining data preprocessing pipelines, SMOTE balancing and grid search for hyperparameter tuning. Below are the detailed steps:
 
-1. **Data preprocessing**
+1. **Data preprocessing:**
     - **Missing Value Handling:**
         - Numerical columns (e.g., previous_year_rating, length_of_service) are imputed using median strategies.
         - Categorical variables with missing values (e.g., education) are filled with placeholders like "Unknown" or the most frequent category.
@@ -43,8 +43,7 @@ This project is structured around three core tasks in Human Resource analyticsâ€
         - SMOTE (Synthetic Minority Over-sampling Technique) is applied to generate synthetic samples for minority classes in classification tasks (especially for 
           attrition).
           
-2. **Feature Engineering:**
-   - To improve model performance and extract more meaning from raw attributes:
+2. **Feature Engineering:** To improve model performance and extract more meaning from raw attributes:
      - **Derived Features:**
         - `training_efficiency` = `avg_training_score` / (`no_of_trainings` + 1)
         - `experience_rating_ratio` = `previous_year_rating` / (`length_of_service` + 1)
@@ -53,9 +52,8 @@ This project is structured around three core tasks in Human Resource analyticsâ€
         - Employees were flagged as at-risk ('attrition` = 1) if they met multiple criteria such as low KPI, low training scores, long service, low past ratings, and no 
           awards.
            
-3. **Modeling Techniques**
-     - Different models were applied based on the problem type:
-     - **A. Performance Prediction (Regression)**
+3. **Modeling Techniques:** Different models were applied based on the problem type:
+     - **Performance Prediction (Regression)**
        - **Algorithms Used:**
          1. Linear Regression
          2. Random Forest Regressor
@@ -66,30 +64,28 @@ This project is structured around three core tasks in Human Resource analyticsâ€
          2. Mean Squared Error (MSE)
          3. Mean Absolute Error (MAE)
          4. Custom accuracy metric: 1 - mean absolute % error
-     - **B. Performance Classification**
-            - **Goal:**
-                - Classify whether employees met more than 80% of their KPIs.
-            - **Algorithms Used:**
-                - Decision Tree Classifier (tuned via GridSearchCV)
-                - Random Forest Classifier
-                - Support Vector Classifier (SVM)
-            - **Evaluation Metrics:**
-                - Accuracy, Precision, Recall, F1-Score
-                - Confusion Matrix for error type analysis
-     - **C. Attrition Classification**
-            - **Goal:** Predict if an employee is at high risk of leaving.
-            - **Label:** Binary (0 = low risk, 1 = high risk) based on a custom rule-based logic.
-            - **Algorithms Used:** Logistic Regression (with L2 regularization)
-            - **Evaluation Metrics:**
-                - Precision, Recall, F1-Score
-                - Confusion Matrix for identifying false positives/negatives
+     - **Performance Classification**
+       - **Goal:** Classify whether employees met more than 80% of their KPIs.
+       - **Algorithms Used:**
+         1. Decision Tree Classifier (tuned via GridSearchCV)
+         2. Random Forest Classifier
+         3. Support Vector Classifier (SVM)
+       - **Evaluation Metrics:**
+         1. Accuracy, Precision, Recall, F1-Score
+         2. Confusion Matrix for error type analysis
+     - **Attrition Classification**
+       - **Goal:** Predict if an employee is at high risk of leaving.
+       - **Label:** Binary (0 = low risk, 1 = high risk) based on a custom rule-based logic.
+       - **Algorithms Used:** Logistic Regression (with L2 regularization)
+       - **Evaluation Metrics:**
+         1. Precision, Recall, F1-Score
+         2. Confusion Matrix for identifying false positives/negatives
     
-4. **Model Evaluation**
-    - All models were evaluated using:
-       - Train-Test Splits (typically 80:20 stratified for classification).
-       - Cross-Validation using 5-fold CV for robust performance estimation
-       - Hyperparameter Tuning: GridSearchCV was used across models to optimize parameters like max depth, number of estimators (Random Forest), regularization strength 
-          (Logistic), and kernel type (SVM).
+4. **Model Evaluation:** All models were evaluated using:
+   - Train-Test Splits (typically 80:20 stratified for classification).
+   - Cross-Validation using 5-fold CV for robust performance estimation
+   - Hyperparameter Tuning: GridSearchCV was used across models to optimize parameters like max depth, number of estimators 
+      (Random Forest), regularization strength (Logistic), and kernel type (SVM).
    
 
 
