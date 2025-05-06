@@ -133,7 +133,7 @@ This project is structured around three core tasks in Human Resource analyticsâ€
  - experience_rating_ratio = previous_year_rating / (length_of_service + 1)
  - awards_per_year = awards / service length
 
-### Encoding:
+## Encoding:
  - Used OneHotEncoding for nominal features, Frequency Encoding for region and StandardScaler for numerical features
 
 ## Model Fitting
