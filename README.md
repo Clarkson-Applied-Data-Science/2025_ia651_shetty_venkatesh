@@ -6,39 +6,41 @@ This project focuses on three critical HR analytics tasks: predicting employee p
 
 ## Dataset
 
-Data Source: [https://www.kaggle.com/datasets/sanjanchaudhari/employees-performance-for-hr-analytics/data)]
+- Data Source: [https://www.kaggle.com/datasets/sanjanchaudhari/employees-performance-for-hr-analytics/data)]
 
-Records: ~17,000 rows (employees)
+- Records: ~17,000 rows (employees)
 
-Features:
+- **Features:**
 
- -**Demographics:** department, region, education, gender
+ - **Demographics:** department, region, education, gender
 
- -**Performance Metrics:** no_of_trainings, avg_training_score, previous_year_rating, KPIs_met_more_than_80, awards_won, length_of_service
+ - **Performance Metrics:** no_of_trainings, avg_training_score, previous_year_rating, KPIs_met_more_than_80, awards_won, length_of_service
 
- -**Derived Metrics:** training_efficiency, experience_rating_ratio, awards_per_year, performance_score, attrition
+ - **Derived Metrics:** training_efficiency, experience_rating_ratio, awards_per_year, performance_score, attrition
 
 ## Prediction Objectives
 
-**Performance Prediction (Regression):** Estimate a numerical score to represent overall employee performance.
+- **Performance Prediction (Regression):** Estimate a numerical score to represent overall employee performance.
 
-**Performance Classification:** Predict whether an employee's performance is satisfactory or not.
+- **Performance Classification:** Predict whether an employee's performance is satisfactory or not.
 
-**Attrition Classification:** Predict the likelihood of an employee leaving based on performance-related criteria.
+- **Attrition Classification:** Predict the likelihood of an employee leaving based on performance-related criteria.
 
 ## Practical Use Case
 
-These models support HR decisions like personalized development, promotions, and retention strategies.
+These models support HR decisions like personalized development, promotions and retention strategies.
 
 ## Process Overview
 
 We began with regression models for numeric performance prediction and moved to classification models for performance categories and attrition. Final approaches include preprocessing pipelines, SMOTE balancing and grid search for hyperparameter tuning.
 
-## EDA Summary
+## Preprocessing
 
-X: Employee attributes, ratings, and derived metrics
+Categorical variables such as gender, education, department and recruitment channel were one-hot encoded. Boolean features were converted to integers for compatibility with machine learning models. The 'region' column was target-encoded using the mean of the target variable to preserve predictive information. Numerical features were standardized using StandardScaler to normalize their scales.
 
-Y: performance_score (regression), performance_class (classification), attrition (binary classification)
+- X: Employee attributes, ratings, and derived metrics
+
+- Y: performance_score (regression), performance_class (classification), attrition (binary classification)
 
 ## Distributions
 
