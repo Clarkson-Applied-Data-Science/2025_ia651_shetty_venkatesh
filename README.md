@@ -118,8 +118,8 @@ This project is structured around three core tasks in Human Resource analyticsâ€
 
  - **Correlation Heatmap of Numeric Features**
    - Heatmap showing relationships between key numerical attributes such as age, length of service, and training score.
-   - Previous_year_rating and performance_score are positively correlated. avg_training_score correlates with performance 
-      as expected.
+   - Previous_year_rating and performance_score are positively correlated.
+   - avg_training_score correlates with performance as expected.
    ![image](https://github.com/user-attachments/assets/7ba00ebd-7d11-45a4-a402-193520d103fb)
 
 ## Feature Importance (Random Forest)
