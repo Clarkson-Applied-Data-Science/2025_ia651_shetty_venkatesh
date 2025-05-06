@@ -92,18 +92,35 @@ This project is structured around three core tasks in Human Resource analyticsâ€
 
 ## Distributions
 
-![image](https://github.com/user-attachments/assets/b34a6699-41c1-49d4-a2a2-cdac4ac5b1a9)
-![image](https://github.com/user-attachments/assets/c7f50f4c-dcef-4740-a65c-4b269ea8dd65)
-![image](https://github.com/user-attachments/assets/fd3becec-862d-4d52-a4be-9352c2cbd181)
-![image](https://github.com/user-attachments/assets/575fcd4e-651b-4c5a-b154-129cd4c27182)
-![image](https://github.com/user-attachments/assets/84e32600-e6af-4dbf-a9b8-ac1de47c1929)
-![image](https://github.com/user-attachments/assets/beaaf0d8-af66-4731-97c4-1eb8d1c97a6a)
+- **Histogram of Numerical Features**
+  - Distribution plots for various numeric columns like age, avg_training_score, previous_year_rating, etc.
+  ![image](https://github.com/user-attachments/assets/b34a6699-41c1-49d4-a2a2-cdac4ac5b1a9)
 
-## Correlation
+- **Pie Chart showing Department-wise Employee Distribution**
+  - Visual breakdown of the percentage of employees across departments.
+  ![image](https://github.com/user-attachments/assets/c7f50f4c-dcef-4740-a65c-4b269ea8dd65)
 
-Previous_year_rating and performance_score are positively correlated. avg_training_score correlates with performance as expected.
+- **Histogram showing Age Distribution of Employees**
+  - Histogram showing the frequency of different age groups in the organization.
+  ![image](https://github.com/user-attachments/assets/fd3becec-862d-4d52-a4be-9352c2cbd181)
 
-![image](https://github.com/user-attachments/assets/7ba00ebd-7d11-45a4-a402-193520d103fb)
+- **Bar Graph of Average Training Score by Department**
+  - Bar plot comparing the average training score across various departments.
+   ![image](https://github.com/user-attachments/assets/575fcd4e-651b-4c5a-b154-129cd4c27182)
+
+- **Bar Chart visualizing Percentage of Employees Meeting KPIs (>80%) by Department**
+  - Bar chart visualizing the proportion of high KPI achievers across departments.
+  ![image](https://github.com/user-attachments/assets/84e32600-e6af-4dbf-a9b8-ac1de47c1929)
+
+- **Pie Chart representing Education Level Distribution**
+  - Visual representation of the distribution of educational qualifications among employees.
+  ![image](https://github.com/user-attachments/assets/beaaf0d8-af66-4731-97c4-1eb8d1c97a6a)
+
+ - **Correlation Heatmap of Numeric Features**
+   - Heatmap showing relationships between key numerical attributes such as age, length of service, and training score.
+   - Previous_year_rating and performance_score are positively correlated. avg_training_score correlates with performance 
+      as expected.
+   ![image](https://github.com/user-attachments/assets/7ba00ebd-7d11-45a4-a402-193520d103fb)
 
 ## Feature Importance (Random Forest)
 
