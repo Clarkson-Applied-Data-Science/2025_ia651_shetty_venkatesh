@@ -2,7 +2,7 @@
 
 ## Abstract
 
-This project focuses on three critical HR analytics tasks: predicting employee performance, classifying performance levels, and identifying high-risk attrition cases. We employ various supervised machine learning models—including Logistic Regression, Random Forest, Decision Trees, SVM using a well-engineered feature set from employee performance and engagement data. The models are evaluated on their accuracy, F1-score, precision and recall, while confusion matrices provide insight into prediction quality.
+This project focuses on three critical HR analytics tasks: predicting employee performance, classifying performance levels and identifying high-risk attrition cases. We employ various supervised machine learning models—including Logistic Regression, Random Forest, Decision Trees, SVM using a well-engineered feature set from employee performance and engagement data. The models are evaluated on their accuracy, F1-score, precision and recall, while confusion matrices provide insight into prediction quality.
 
 ## Dataset
 
@@ -12,19 +12,19 @@ Records: ~17,000 rows (employees)
 
 Features:
 
-Demographics: department, region, education, gender
+ **Demographics:** department, region, education, gender
 
-Performance Metrics: no_of_trainings, avg_training_score, previous_year_rating, KPIs_met_more_than_80, awards_won, length_of_service
+ **Performance Metrics:** no_of_trainings, avg_training_score, previous_year_rating, KPIs_met_more_than_80, awards_won, length_of_service
 
-Derived Metrics: training_efficiency, experience_rating_ratio, awards_per_year, performance_score, attrition
+ **Derived Metrics:** training_efficiency, experience_rating_ratio, awards_per_year, performance_score, attrition
 
 ## Prediction Objectives
 
-Performance Prediction (Regression): Estimate a numerical score to represent overall employee performance.
+**Performance Prediction (Regression):** Estimate a numerical score to represent overall employee performance.
 
-Performance Classification: Predict whether an employee's performance is satisfactory or not.
+**Performance Classification:** Predict whether an employee's performance is satisfactory or not.
 
-Attrition Classification: Predict the likelihood of an employee leaving based on performance-related criteria.
+**Attrition Classification:** Predict the likelihood of an employee leaving based on performance-related criteria.
 
 ## Practical Use Case
 
@@ -32,7 +32,7 @@ These models support HR decisions like personalized development, promotions, and
 
 ## Process Overview
 
-We began with regression models for numeric performance prediction and moved to classification models for performance categories and attrition. Mis-steps included data leakage and overfitting with certain models. Final approaches include preprocessing pipelines, SMOTE balancing and grid search for hyperparameter tuning.
+We began with regression models for numeric performance prediction and moved to classification models for performance categories and attrition. Final approaches include preprocessing pipelines, SMOTE balancing and grid search for hyperparameter tuning.
 
 ## EDA Summary
 
@@ -51,9 +51,7 @@ Y: performance_score (regression), performance_class (classification), attrition
 
 ## Correlation
 
-previous_year_rating and performance_score are positively correlated
-
-avg_training_score correlates with performance as expected
+Previous_year_rating and performance_score are positively correlated. avg_training_score correlates with performance as expected.
 
 ![image](https://github.com/user-attachments/assets/7ba00ebd-7d11-45a4-a402-193520d103fb)
 
@@ -65,9 +63,9 @@ KPIs_met_more_than_80, avg_training_score, previous_year_rating are top predicto
 
 Created derived features:
 
-attrition = ['KPIs_met_more_than_80'] == 0) & ['avg_training_score'] < 60) & ['length_of_service'] > 5) & ['previous_year_rating'] <= 2) & ['awards_won'] == 0)
+attrition = (KPIs_met_more_than_80 == 0) & (avg_training_score < 60) & (length_of_service > 5) & (previous_year_rating <= 2) & (awards_won == 0)
 
-
+performance_score = (avg_training_score / 100 ) + (KPIs_met_more_than_80 * 0.5)
 
 training_efficiency = avg training score / (no of trainings + 1)
 
@@ -77,47 +75,25 @@ awards_per_year = awards / service length
 
 ### Encoding:
 
-Used OneHotEncoding for nominal features
-
-Used Frequency Encoding for region
-
-StandardScaler for numerical features
+Used OneHotEncoding for nominal features, Frequency Encoding for region and StandardScaler for numerical features
 
 ## Model Fitting
 
-Train-Test Split: 80:20 using train_test_split with stratification for classification
+**Train-Test Split:** 80:20 using train_test_split with stratification for classification
 
-Data Leakage Prevention: Feature engineering and leakage-prone variables (performance_score in classification) were excluded where needed
+**Data Leakage Prevention:** Feature engineering and leakage-prone variables (performance_score in classification) were excluded where needed
 
-Models Used
+## Models Used
 
-Linear Regression (for performance prediction)
-
-Logistic Regression
-
-Decision Tree Classifier
-
-Random Forest Classifier
-
-Support Vector Machine (SVM)
-
-Neural Network (Keras)
-
-Hyperparameter Tuning
-
-Used GridSearchCV for Logistic, Decision Tree, and Random Forest
-
-Used dropout, batch norm, and Adam optimizer in Neural Network tuning
+Linear Regression (for performance prediction), Logistic Regression, Decision Tree Classifier, Random Forest Classifier, Support Vector Machine (SVM), Hyperparameter Tuning, Used GridSearchCV for Logistic, Decision Tree and Random Forest, Used dropout, batch norm and Adam optimizer in Neural Network tuning
 
 ## Metrics
 
-Regression: R², MSE, MAE
+**Regression:** R², MSE, MAE
 
-Classification: Accuracy, Precision, Recall, F1-Score
+**Classification:** Accuracy, Precision, Recall, F1-Score
 
 Used SMOTE for class imbalance
-
-Confusion Matrix Highlights:
 
 All models evaluated using heatmap confusion matrices
 
@@ -125,15 +101,15 @@ All models evaluated using heatmap confusion matrices
 
 ### Performance Prediction
 
-| Model                   | R² Score | MSE      | MAE      | Accuracy (%) |
+| Model                   | R2 Score |   MSE    |   MAE    | Accuracy (%) |
 |------------------------|----------|----------|----------|---------------|
-| Random Forest Regressor| 0.389750 | 0.048669 | 0.190594 | 76.54         |
-| Linear Regression      | 0.373556 | 0.049961 | 0.198158 | 75.61         |
-| SVR                    | 0.373350 | 0.049977 | 0.185287 | 77.19         |
+| Random Forest Regressor| 0.389813 | 0.048664 | 0.190620 | 76.537546     |
+| Linear Regression      | 0.373556 | 0.049961 | 0.198158 | 75.609741     |
+| SVR                    | 0.373350 | 0.049977 | 0.185287 | 77.193927     |
 
 ### Performance Classification
 
-| Model                | Accuracy | Precision | Recall | F1 Score |
+| Model               | Accuracy | Precision | Recall | F1 Score |
 |---------------------|----------|-----------|--------|----------|
 | Logistic Regression | 69.43%   | 60.62%    | 42.24% | 49.79%   |
 | Random Forest       | 70.44%   | 63.92%    | 40.40% | 49.51%   |
@@ -144,7 +120,7 @@ All models evaluated using heatmap confusion matrices
 
 ### Attrition Classification
 
-| Model                | Accuracy | Precision | Recall | F1 Score |
+| Model               | Accuracy | Precision | Recall | F1 Score |
 |---------------------|----------|-----------|--------|----------|
 | Logistic Regression | 71.99%   | 11.64%    | 82.24% | 20.39%   |
 | Random Forest       | 84.30%   | 17.57%    | 70.39% | 28.12%   |
@@ -152,14 +128,6 @@ All models evaluated using heatmap confusion matrices
 | SVM                 | 84.59%   | 14.94%    | 53.95% | 23.40%   |
 
 ![image](https://github.com/user-attachments/assets/f28f719d-40fd-4f46-8f02-a86ee8127b96)
-
-Overfitting & Underfitting
-
-Decision Trees showed mild overfitting at high depth
-
-Dropout in Neural Networks helped reduce overfitting
-
-Ensemble models like Random Forests performed well overall
 
 ## Production & Use
 
