@@ -228,3 +228,7 @@ All models evaluated using heatmap confusion matrices
 7. Inclusion of Ethical and Bias Audits
 8. Employee Lifecycle Prediction
 9. Transfer Learning Across Organizations
+
+## Conclusion
+
+Across the three modeling objectives—performance classification, attrition classification, and performance prediction—different models proved optimal depending on the evaluation criteria. For performance classification, Random Forest and Decision Tree delivered the highest accuracy (70.44%), while Decision Tree was best for precision-driven tasks, and SVM excelled in recall and F1-score, making it suitable for catching true underperformers. In the attrition classification task, models like Logistic Regression and Random Forest often show strong interpretability and generalization, with Random Forest typically offering a balance between accuracy and recall for identifying potential employee exits. For the performance prediction (regression) task, Support Vector Regression (SVR) was used, and performance was best interpreted using metrics like RMSE, MAE, and R², where lower RMSE and higher R² values indicate better predictions. Ultimately, Random Forest consistently shows reliable, balanced performance across tasks, while SVM and Decision Tree offer specialized strengths in recall and precision, respectively.
