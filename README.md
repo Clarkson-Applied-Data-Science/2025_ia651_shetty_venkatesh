@@ -166,12 +166,9 @@ All models evaluated using heatmap confusion matrices
 ## Model Evaluation Metrics
 
 ### Performance Prediction
-   - **Random Forest Regressor:**
-   ![Image](https://github.com/user-attachments/assets/87bfd331-914c-46ae-81d4-9ef45371cc6c)
-   - **Linear Regression:**
-   ![Image](https://github.com/user-attachments/assets/f8c2c19d-a450-47a3-a19a-4b50fb54e3ec)
-   - **Support Vector Regression:**
-   ![Image](https://github.com/user-attachments/assets/8daa7ce0-8edf-4f19-9c60-6fc5b4d6ab06)
+![Image](https://github.com/user-attachments/assets/87bfd331-914c-46ae-81d4-9ef45371cc6c)
+![Image](https://github.com/user-attachments/assets/f8c2c19d-a450-47a3-a19a-4b50fb54e3ec)
+![Image](https://github.com/user-attachments/assets/8daa7ce0-8edf-4f19-9c60-6fc5b4d6ab06)
 
    - **Model Performance Comparison:**
 
@@ -193,6 +190,12 @@ All models evaluated using heatmap confusion matrices
 ![image](https://github.com/user-attachments/assets/6e15ad2d-218e-47e0-9ec7-8c812a3c585e)
 
 ### Attrition Classification
+![Image](https://github.com/user-attachments/assets/c50c8898-980b-4f6c-9967-b304018aa1fc)
+![Image](https://github.com/user-attachments/assets/1dc32151-caf9-4aa2-aac7-25ca42a6740b)
+![Image](https://github.com/user-attachments/assets/a0556e43-3881-4fbf-aefc-85e642aa816e)
+![Image](https://github.com/user-attachments/assets/3f809bc8-e396-4242-91fe-db5a673fc1c9)
+
+   - **Model Performance Comparison:**
 
 | Model               | Accuracy | Precision | Recall | F1 Score |
 |---------------------|----------|-----------|--------|----------|
