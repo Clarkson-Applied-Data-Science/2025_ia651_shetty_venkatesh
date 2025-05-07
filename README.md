@@ -166,6 +166,14 @@ All models evaluated using heatmap confusion matrices
 ## Model Evaluation Metrics
 
 ### Performance Prediction
+   - **Random Forest Regressor:**
+   ![Image](https://github.com/user-attachments/assets/87bfd331-914c-46ae-81d4-9ef45371cc6c)
+   - **Linear Regression:**
+   ![Image](https://github.com/user-attachments/assets/f8c2c19d-a450-47a3-a19a-4b50fb54e3ec)
+   - **Support Vector Regression:**
+   ![Image](https://github.com/user-attachments/assets/8daa7ce0-8edf-4f19-9c60-6fc5b4d6ab06)
+
+   - **Model Performance Comparison:**
 
 | Model                   | R2 Score |   MSE    |   MAE    | Accuracy (%) |
 |------------------------|----------|----------|----------|---------------|
