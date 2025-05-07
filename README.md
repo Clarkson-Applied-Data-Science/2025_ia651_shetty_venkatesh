@@ -94,7 +94,7 @@ This project is structured around three core tasks in Human Resource analyticsâ€
 
 - **Histogram of Numerical Features**
   - Distribution plots for various numeric columns like age, avg_training_score, previous_year_rating, etc.
-  ![image](https://github.com/user-attachments/assets/b34a6699-41c1-49d4-a2a2-cdac4ac5b1a9)
+  ![Image](https://github.com/user-attachments/assets/a55c2304-6102-4341-87b3-45c345707b5f)
 
 - **Pie Chart showing Department-wise Employee Distribution**
   - Visual breakdown of the percentage of employees across departments.
