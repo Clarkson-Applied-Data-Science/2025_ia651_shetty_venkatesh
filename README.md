@@ -179,6 +179,12 @@ All models evaluated using heatmap confusion matrices
 | SVR                    | 0.373350 | 0.049977 | 0.185287 | 77.193927     |
 
 ### Performance Classification
+![Image](https://github.com/user-attachments/assets/ad64df9b-cb57-41a9-a895-59d78a47dc14)
+![Image](https://github.com/user-attachments/assets/309c155b-84d0-4147-b66b-33a2b244788c)
+![Image](https://github.com/user-attachments/assets/b16969bc-59a3-45be-9866-d2cd3cb26f0d)
+![Image](https://github.com/user-attachments/assets/8ffc382f-9f06-4ab4-9c42-ca1f25ae05a6)
+
+   - **Model Performance Comparison:**
 
 | Model               | Accuracy | Precision | Recall | F1 Score |
 |---------------------|----------|-----------|--------|----------|
